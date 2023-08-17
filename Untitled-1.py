@@ -1,6 +1,3 @@
-a=int(input())
-while True:
-    print(a)
-    a+=1
-    if a>1:
-        break
+a="hello"
+for i in range(0,5,2):
+    print(i)
