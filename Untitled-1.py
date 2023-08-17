@@ -1,12 +1,10 @@
-a = input()
+a = int(input())
 
-if (a == "A"):
-    print("best!!!")
-elif (a == "B"):
-    print("good!!")
-elif (a == "C"):
-    print("run!")
-elif (a == "D"):
-    print("slowly~")
+if a in [12, 1, 2]:
+    print("winter")
+elif a in [3, 4, 5]:
+    print("spring")
+elif a in [6, 7, 8]:
+    print("summer")
 else:
-    print("what?")
+    print("fall")
