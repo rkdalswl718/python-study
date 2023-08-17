@@ -1,3 +1,3 @@
-a,d,n=map(int, input().split())
+a,r,n=map(int, input().split())
 
-print(a+d*(n-1))
+print(a*r**(n-1))
