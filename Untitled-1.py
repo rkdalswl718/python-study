@@ -5,3 +5,8 @@ print(a+b)
 print(type(a+b))
 
 #bool형
+a=True
+if (a):
+    print("참")
+else :
+    print("거짓")
