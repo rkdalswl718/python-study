@@ -1,10 +1,5 @@
-n = int(input())
+n,m = map(int, input().split())
 
-s = 0
-t = 0
-
-while s<n :
-  t = t+1
-  s = s+t
-  
-print(t)
+for i in range(1, n+1) :
+  for j in range(1, m+1) :
+    print(i, j)
