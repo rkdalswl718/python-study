@@ -1,5 +1,6 @@
 a = int(input())
 
-while a!=0:
-    a=a-1
-    print(a)
+i=0
+while i<=a:
+    print(i)
+    i+=1
