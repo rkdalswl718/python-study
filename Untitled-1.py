@@ -1,9 +1,18 @@
-a,r,n=map(int, input().split())
+n = int(input())
+a = input().split()
 
-print(a*r**(n-1))a,m,d,n = map(int,input().split())
-num=0
+d = [];
 
-for i in range(1,n):
-    a = (m*a)+d
-    
-print(a)
+
+for i in range(n):
+    a[i] = int(a[i])
+
+
+for i in range(24) :
+    d.append(0)
+
+for i in range(n) :
+    d[a[i]] += 1
+
+for i in range(1, 24) :
+    print(d[i], end=' ')
