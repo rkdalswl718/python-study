@@ -1,5 +1,19 @@
-from gtts import gTTS
+n = int(input())
+a = input().split()
 
-text = "우와 대박이다.";
-tts = gTTS(text=text, lang='ko');
-tts.save(r"3. 텍스트를 음성으로 변환\hi.mp3");
+d = [];
+
+
+for i in range(n):
+    a[i] = int(a[i])
+
+
+for i in range(24) :
+    d.append(0)
+
+for i in range(n) :
+    d[a[i]] += 1
+
+for i in range(n-1, -1, -1) :
+  print(a[i], end=' ')
+
