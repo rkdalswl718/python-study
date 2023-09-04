@@ -34,5 +34,9 @@ def getQueue() :
 enqueue(1)
 enqueue(2)
 enqueue(3)
+dequeue()
+dequeue()
+dequeue()
+dequeue()
 
 print("list : ", getQueue())
