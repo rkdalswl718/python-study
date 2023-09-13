@@ -1,26 +1,21 @@
-d=[] #대괄호 [ ] 를 이용해 아무것도 없는 빈 리스트 만들기
+board = []
 
-for i in range(20) :
-    d.append([])         #리스트 안에 다른 리스트 추가해 넣기
-    for j in range(20) : 
-        d[i].append(0)    #리스트 안에 들어있는 리스트 안에 0 추가해 넣기
+for i in range(19) :
+    row = []      #리스트 안에 다른 리스트 추가해 넣기
+    for j in range(19) : 
+        row.append(0)
+        board.append(row)
 
 n = int(input())
 
-for i in range(n) :
-    x,y=input().split()
-    for j in range(1, 20) :
-        if d[j][int(y)]==0 :
-            d[j][int(y)]=1
-    else :
-        d[j][int(y)]=0
+# 흰 돌의 위치를 입력 받아 해당 위치에 흰 돌 놓기
+for i in range(n):
+    x, y = map(int, input().split())
+    board[x-1][y-1] = 1   # 좌표는 1부터 시작하지만 인덱스는 0부터 시작하므로 -1
 
-    if d[int(x)][j]==0 :
-        d[int(x)][j]=1
-    else :
-        d[int(x)][j]=0
+#바둑판 출력하기
+for i in range(19):
+    for j in range(19):
+        print(board[i][j], end=' ') 
 
-for i in range(1, 20) :
-    for j in range(1, 20) : 
-        print(d[i][j], end=' ')    #공백을 두고 한 줄로 출력
-print()            
+print()
