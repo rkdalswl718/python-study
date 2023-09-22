@@ -28,7 +28,7 @@ def createQueue(size):
         return queue[front +1: rear + 1]
 
     return enqueue, dequeue, getQueue
- 
+
 enqueue, dequeue, getQueue = createQueue(5)
 
 enqueue(1)
