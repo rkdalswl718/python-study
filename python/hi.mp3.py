@@ -1,26 +1,30 @@
-def max_score_recursive(n, s):
-    if n <= 2:
-        return sum(s)
-    
-    def helper(i):
-        if i < 0:
-            return 0
-        if i == 0:
-            return s[0]
-        if i == 1:
-            return s[0] + s[1]
-        
-        # 현재 계단을 오를 때 두 가지 옵션을 고려하여 최대값을 계산합니다.
-        option1 = helper(i - 3) + s[i - 1] + s[i]
-        option2 = helper(i - 2) + s[i]
-        
-        # 두 옵션 중에서 더 큰 값을 반환합니다.
-        return max(option1, option2)
-    
-    return helper(n - 1)
+import time
+import random
 
-n = int(input())  # 계단 개수
-s = [int(input()) for _ in range(n)]  # 계단 리스트
+WORD_LIST = [
+    "위대한 것을 이루려면 우리는 행동할 뿐 아니라 꿈도 꾸어야 하고, 계획할 뿐 아니라 믿기도 해야 한다.",
+    "인생에서 중요한 법칙은 만사에 중용을 지키는 일이다.",
+    "한나라의 진정한 재산은 땀 흘려 일하는 부지런한 주민의 수에 있다.",
+    "자유는 획득하는 것보다 간직하는 것이 더 어렵다.",
+    "당신이 살면서 어떤 부침을 겪든 간에 생각이 당신의 기본 자산이 되어야 한다.",
+    "참된 삶을 맛보지 못한 자만이 죽음을 두려워하는 것이다.",
+    "나는 대단한 인간이 아니다. 노력하는 노인일 뿐이다."
+]
 
-result = max_score_recursive(n, s)
-print(result)
+random.shuffle(WORD_LIST)
+
+for i in WORD_LIST:
+    시작 = time.time()
+    입력 = 입력(i + '\n').strip()
+    Speed = time.time() - 시작
+
+    정확도 = 0
+    for c, a in zip(입력, i):
+        정확도 = 정확도 + 1 if c == a else 정확도
+    
+    Len = len(i)
+    c = 정확도 / Len * 100
+    e = (Len - 정확도) / Len * 100
+    speed = float(정확도 / Speed) * 60
+
+    print(f"타수: {speed:0.2f} 정확도: {c:0.2f}% 오타: {e:0.2f}%")
