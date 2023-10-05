@@ -1,30 +1,28 @@
 import time
 import random
 
-WORD_LIST = [
-    "위대한 것을 이루려면 우리는 행동할 뿐 아니라 꿈도 꾸어야 하고, 계획할 뿐 아니라 믿기도 해야 한다.",
-    "인생에서 중요한 법칙은 만사에 중용을 지키는 일이다.",
-    "한나라의 진정한 재산은 땀 흘려 일하는 부지런한 주민의 수에 있다.",
-    "자유는 획득하는 것보다 간직하는 것이 더 어렵다.",
-    "당신이 살면서 어떤 부침을 겪든 간에 생각이 당신의 기본 자산이 되어야 한다.",
-    "참된 삶을 맛보지 못한 자만이 죽음을 두려워하는 것이다.",
-    "나는 대단한 인간이 아니다. 노력하는 노인일 뿐이다."
-]
+word_list = ["안녕하십니까", "저는 윤석열입니다", "나는 지금 잠이 옵니다", "집가고 싶다"]
+random.shuffle(word_list)
 
-random.shuffle(WORD_LIST)
+correct_count = 0  # 정확하게 입력한 횟수
+total_characters = 0  # 총 입력한 문자 수
+typo_count = 0 
 
-for i in WORD_LIST:
-    시작 = time.time()
-    입력 = 입력(i + '\n').strip()
-    Speed = time.time() - 시작
-
-    정확도 = 0
-    for c, a in zip(입력, i):
-        정확도 = 정확도 + 1 if c == a else 정확도
+for word in word_list:
+    start = time.time()
+    print(word)
+    user = input().strip()
+    end = time.time() - start
     
-    Len = len(i)
-    c = 정확도 / Len * 100
-    e = (Len - 정확도) / Len * 100
-    speed = float(정확도 / Speed) * 60
+    total_characters += len(word)
+    
+    if user == word:
+        correct_count += 1
+    else:
+        typo_count += sum(1 for i, j in zip(user, word) if i != j)
 
-    print(f"타수: {speed:0.2f} 정확도: {c:0.2f}% 오타: {e:0.2f}%")
+typing_speed = total_characters / (end * len(word_list))  # 타수 계산
+accuracy = (correct_count / len(word_list)) * 100  # 정확도 계산
+typo_rate = (typo_count / total_characters) * 100  # 오타율 계산
+
+print(f"타수: {typing_speed:.2f} 정확도: {accuracy:.2f}% 오타율: {typo_rate:.2f}%")
