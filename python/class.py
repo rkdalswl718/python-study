@@ -1,9 +1,7 @@
-class name:
-    def __init__(self,task,age,name):
-        self.team = "부소마"
-        self.task=task
-        self.age = age
-        self.name = name
+def 재기(n) :
+    if n!=0:
+        재기(n-1)
+        print([n::-1])
+        
 
-    def intro(self):
-        prin("안녕하세요 %s에서 %s를 담당하고 이쓴 %d살%s입니다")
+재기(int(input()))
