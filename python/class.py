@@ -1,7 +1,9 @@
-def 재기(n) :
-    if n!=0:
-        재기(n-1)
-        print([n::-1])
-        
+def 섹스(list):
+    if list == []:
+        return 0
+    else:
+        return list.pop() + 섹스(list)
 
-재기(int(input()))
+li = list(map(int,input().split()))
+
+print(섹스(li))
