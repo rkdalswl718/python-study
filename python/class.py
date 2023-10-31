@@ -1,12 +1,10 @@
-a = input()
+a = int(input())
 
-if(a=='A'):
-    print('best!!!')
-elif(a=='B'):
-    print('good!!')
-elif(a=='C'):
-    print('run!')
-elif(a=='D'):
-    print('slowly~')
+if(a//3==1):
+    print('spring')
+elif(a//3==2):
+    print('summer')
+elif(a//3==3):
+    print('fall')
 else:
-    print('what?')
+    print('winter')
