@@ -1,9 +1,10 @@
-def 섹스(list):
-    if list == []:
-        return 0
-    else:
-        return list.pop() + 섹스(list)
+a = input()
 
-li = list(map(int,input().split()))
-
-print(섹스(li))
+if(a=='A'):
+    print('best!!')
+elif(a=='B'):
+    print('good!!')
+elif(a=='C'):
+    print('run!')
+elif(a=='D'):
+    print('slowly~')
