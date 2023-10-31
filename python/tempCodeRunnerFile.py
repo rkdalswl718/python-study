@@ -1,12 +1,6 @@
-a = input()
-
-if(a=='A'):
-    print('best!!!')
-elif(a=='B'):
-    print('good!!')
-elif(a=='C'):
-    print('run!')
-elif(a=='D'):
-    print('slowly~')
-else:
-    print('what?')
+a = int(input())
+s=0
+i=0
+while i<=a:
+    s = s+1
+print(s)
