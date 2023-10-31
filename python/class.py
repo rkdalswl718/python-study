@@ -1,5 +1,8 @@
-n,m = map(int,input().split())
+r,g,b = map(int,input().split())
 
-for i in range (1, n+1):
-    for j in range (1, m+1):
-        print(i,j)
+for i in range (0, r):
+    for j in range (0, g):
+        for z in range (0, b):
+            print(i,j,z)
+
+print(r*g*b)
