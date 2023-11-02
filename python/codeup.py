@@ -1,8 +1,8 @@
 def f(a,b):
-    if (a%b == 0):
+    if (a%b%c == 0):
         return b;
     return f(b, a%b)
 
-a,b = map(int, input().split())
+a,b,c = map(int, input().split())
 
-print(f(a,b))
+print(f(f(a,b),c))
