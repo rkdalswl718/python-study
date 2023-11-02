@@ -35,5 +35,4 @@ push(3)
 push(1)
 push(0)
 
-
 print(list)
