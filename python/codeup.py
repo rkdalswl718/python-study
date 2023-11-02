@@ -1,2 +1,8 @@
-n = int(input())
-a = input().split()
+def f(a,b):
+    if (a%b == 0):
+        return b;
+    return f(b, a%b)
+
+a,b = map(int, input().split())
+
+print(f(a,b))
