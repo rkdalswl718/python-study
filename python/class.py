@@ -1,7 +1,6 @@
-n = int(input())
-cnt = 0
-for i in [50000, 10000, 5000, 1000, 500, 100, 50, 10]:
-    if n // i != 0:
-        cnt += n // i
-        n = n % i
-print(cnt)
+k = int(input())
+
+for i in range (1,7):
+    for j in range (1,7):
+        if(i+j == k):
+            print(i, j)
