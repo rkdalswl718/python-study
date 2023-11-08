@@ -1,9 +1,7 @@
-def 앙(a,b):
-    if(a>b):
-        return
-    if a%2==1:
-        print(a,end=' ')
-    앙(a+1,b)
-
-a,b=(map(int,input().split()))
-앙(a,b)
+def 팩(n):
+    if n ==0:
+        return 1
+    else:
+        return n*팩(n-1)
+n = (int(input()))
+print(팩(n))
