@@ -1,4 +1,2 @@
-str = input()
-start, length = map(int,input().split())
-result = str[start:start+length]
-print(result)
+n = int(input())
+print(len(str(n)))
