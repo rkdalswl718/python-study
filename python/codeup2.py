@@ -1,2 +1,6 @@
 n = int(input())
-print(len(str(n)))
+
+while n >= 10:
+    n = sum(map(int, str(n)))
+
+print(n)
