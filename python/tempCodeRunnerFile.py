@@ -1,8 +1,7 @@
-a = int(input())
-n = int(input().split())
-d = [0]*24
-for i in range(n):
-    d[a[i]]+=1
+def 앙(a,b):
+    if(a>b):
+        return
+    if a%2==1:
+        print(a,end=' ')
 
-for i in range(1,24):
-    print(d[[i]],end=' ')
+앙(map(int,input().split()))
