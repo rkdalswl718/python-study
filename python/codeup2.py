@@ -1,10 +1,5 @@
-d = [[0] * 20 for _ in range (20)]
-n = int(input())
-for i in range (n):
-    x,y = map(int,input().split())
-    d[x][y]=1
-
-for i in range(1,20):
-    for j in range(1,20):
-        print(d[i][j], end=' ')    #공백을 두고 한 줄로 출력
-    print()
+def 응애(n):
+    if n != 0:
+        print(n)
+        응애(n-1)
+응애(int(input()))
