@@ -46,7 +46,7 @@ my_stack = Stack(stack_size)
 
 my_stack.push(1)
 my_stack.push(1)
-my_stack.push(3)
+my_stack.push(3) 
 my_stack.push(1)
 my_stack.push(0)
 
