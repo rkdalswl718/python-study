@@ -32,7 +32,7 @@ class Stack:
         if not self.is_empty():
             return min(self.stack[:self.top + 1])
     # 리스트 슬라이싱. 리스트 처음부터 self.top+1까지(현재요소 모두 포함)
-    
+
     def get_max(self): # 스택의 모든 요소 중 가장 큰 요소 찾기
         if not self.is_empty():
             return max(self.stack[:self.top + 1])
