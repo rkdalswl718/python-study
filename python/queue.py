@@ -6,7 +6,7 @@ front = rear = 0
 def isEmpty(): #비엇는지 확인
     return front == rear 
 
-def isFull(): #꽉찼는지 확인
+def isFull(): #꽉찼는지 확인    
     return (front == rear + 1) or (front == 0 and rear == size - 1)
 #(front == rear + 1): front가 rear 다음에 위치할 때. 이는 큐의 모든 요소가 차있는 경우.
 #(front == 0 and rear == size - 1): front가 큐의 맨 앞에 위치하고,rear가 큐의 맨 뒤에 위치할 때. 
