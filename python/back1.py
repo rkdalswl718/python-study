@@ -34,7 +34,7 @@ class Stack:
             return None
         
     def input_push(self):
-        e = input("입력할 값을 입력하세요: ")
+        e = input("입력할 값을 입력하세요: ") 
         self.push(e)
 
 
