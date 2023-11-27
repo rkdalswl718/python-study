@@ -50,7 +50,7 @@ class Stack:
         self.pop()
       elif i in op:
         if self.list and self.peek() != "(" and (op[i] <= op[self.peek()]):
-          result.append(self.pop())
+          result.append(self.pop()) 
           print("append 3")
         self.push(i)
     while self.list:
@@ -59,4 +59,4 @@ class Stack:
     print(''.join(result))
 
 S = Stack()
-S.F('1+(2+3)') 
+S.F('1+(2+3)')
