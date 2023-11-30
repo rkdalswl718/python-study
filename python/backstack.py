@@ -58,6 +58,5 @@ class Stack:
       print("append 4")
     print(''.join(result))
 
-
 S = Stack()
 S.F('1+(2+3)') 
