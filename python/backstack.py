@@ -60,4 +60,4 @@ class Stack:
 
 
 S = Stack()
-S.F('1+(2+3)')
+S.F('1+(2+3)') 

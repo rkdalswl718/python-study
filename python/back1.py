@@ -67,7 +67,7 @@ def Infix2Postfix(expression):
                 result += s.peek()
                 s.pop()
             s.push(char)
- 
+
     while not s.isEmpty():
         if s.peek() == '(':
             s.pop()
