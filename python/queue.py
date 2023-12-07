@@ -31,7 +31,24 @@ def dequeue():
 def getQueue() :
     return queue[front +1 : rear + 1]
 
+def getSize(): # 큐의 크기
+    return (size - front + rear) % size if rear >= front else (rear - front + size) % size
+
+def peek(): # 큐의 맨 앞의 원소를 반환하지만 큐에서 제거하지 않음
+    if isEmpty():
+        print("큐가 비어 있습니다")
+    else:
+        return queue[(front + 1) % size]
+
+def clear():# 큐의 모든 원소 제거
+    global front, rear
+    front = rear = 0
+
+
 enqueue(1)
+enqueue(2)
+enqueue(2)
+enqueue(2)
 enqueue(2)
 enqueue(3)
 dequeue()
@@ -40,3 +57,20 @@ dequeue()
 dequeue()
 
 print("list : ", getQueue())
+# 큐의 크기 출력
+print("Queue Size:", getSize())
+
+# 큐의 맨 앞 원소 확인
+print("Peek:", peek())
+
+# 큐 비우기
+clear()
+print("Cleared Queue")
+
+# 다시 큐에 원소 추가
+enqueue(4)
+enqueue(5)
+enqueue(6)
+
+# 큐의 내용 출력
+print("Queue Content:", getQueue())

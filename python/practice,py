@@ -1,9 +1,17 @@
-class CircularQueue :
-    def __init__(self, capacity=5):
-        self.capacity = capacity
-        self.list = [None]*capacity
-        self.front = 0
-        self.rear = 0
+a, b = map(float, input().split())
 
-    def isEmpty(self):
-        def
+# 두 수를 더하거나 빼거나 곱하거나 나누거나 제곱하여 가능한 모든 결과를 계산
+addition = a + b
+subtraction1 = a - b
+subtraction2 = b - a
+multiplication = a * b
+division1 = a / b
+division2 = b / a
+exponentiation1 = a ** b
+exponentiation2 = b ** a
+
+# 결과 중 최댓값을 계산
+max_result = max(addition, subtraction1, subtraction2, multiplication, division1, division2, exponentiation1, exponentiation2)
+
+# 결과 출력
+print('%.6f' % max_result)
