@@ -1,17 +1,43 @@
-a, b = map(float, input().split())
+class Student:
+    def __init__(self, name, grade, id):
+        self.name = name
+        self.grade = grade
+        self.id = id
+        self.messages = []
 
-# 두 수를 더하거나 빼거나 곱하거나 나누거나 제곱하여 가능한 모든 결과를 계산
-addition = a + b
-subtraction1 = a - b
-subtraction2 = b - a
-multiplication = a * b
-division1 = a / b
-division2 = b / a
-exponentiation1 = a ** b
-exponentiation2 = b ** a
+    def send_message(self, message, recipient):
+        recipient.receive_message(message, self)
 
-# 결과 중 최댓값을 계산
-max_result = max(addition, subtraction1, subtraction2, multiplication, division1, division2, exponentiation1, exponentiation2)
+    def receive_message(self, message, sender):
+        self.messages.append(f"{sender.name}: {message}")
 
-# 결과 출력
-print('%.6f' % max_result)
+class School:
+    def __init__(self, name):
+        self.name = name
+        self.students = []
+
+    def add_student(self, student):
+        self.students.append(student)
+
+    def get_student_by_id(self, id):
+        for student in self.students:
+            if student.id == id:
+                return student
+        return None
+
+# 학생 생성
+student1 = Student("학생1", 1, 1001)
+student2 = Student("학생2", 2, 1002)
+
+# 학교 생성 및 학생 추가
+school = School("예방학교")
+school.add_student(student1)
+school.add_student(student2)
+
+# 학생들 간에 메시지 전송
+student1.send_message("학교폭력은 우리 모두가 예방해야 합니다.", student2)
+student2.send_message("동의합니다. 함께 노력합시다.", student1)
+
+# 학생들의 메시지 확인
+for student in school.students:
+    print(f"{student.name}의 메시지: {student.messages}")
