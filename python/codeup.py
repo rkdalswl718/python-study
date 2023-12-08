@@ -5,4 +5,4 @@ def f(a,b):
 
 a,b,c = map(int, input().split())
 
-print(f(f(a,bA),c))
+print(f(f(a,b),c))
