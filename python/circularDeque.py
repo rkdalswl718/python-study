@@ -1,5 +1,6 @@
 class CircularDeque:
     def __init__(self, max_size):
+        # 초기화: 덱을 나타내는 리스트, 덱의 크기, front와 rear 포인터, 최대 크기
         self.deque = [None] * max_size
         self.front = 0
         self.rear = 0
@@ -7,12 +8,15 @@ class CircularDeque:
         self.max_size = max_size
 
     def isEmpty(self):
+        # 덱이 비어있는지 확인
         return self.size == 0
 
     def isFull(self):
+        # 덱이 가득 차 있는지 확인
         return self.size == self.max_size
 
     def addFront(self, e):
+        # 맨 앞에 원소 추가
         if not self.isFull():
             self.front = (self.front - 1) % self.max_size
             self.deque[self.front] = e
@@ -22,6 +26,7 @@ class CircularDeque:
             print("덱이 가득 차 있습니다.")
 
     def deleteFront(self):
+        # 맨 앞의 원소 삭제 및 반환
         if not self.isEmpty():
             front_value = self.deque[self.front]
             self.front = (self.front + 1) % self.max_size
@@ -32,6 +37,7 @@ class CircularDeque:
             return None
 
     def getFront(self):
+        # 맨 앞의 원소 반환 (꺼내지 않음)
         if not self.isEmpty():
             return self.deque[self.front]
         else:
@@ -39,6 +45,7 @@ class CircularDeque:
             return None
 
     def addRear(self, e):
+        # 맨 뒤에 원소 추가
         if not self.isFull():
             self.deque[self.rear] = e
             self.rear = (self.rear + 1) % self.max_size
@@ -48,6 +55,7 @@ class CircularDeque:
             print("덱이 가득 차 있습니다.")
 
     def deleteRear(self):
+        # 맨 뒤의 원소 삭제 및 반환
         if not self.isEmpty():
             self.rear = (self.rear - 1) % self.max_size
             rear_value = self.deque[self.rear]
@@ -58,6 +66,7 @@ class CircularDeque:
             return None
 
     def getRear(self):
+        # 맨 뒤의 원소 반환 (꺼내지 않음)
         if not self.isEmpty():
             return self.deque[(self.rear - 1) % self.max_size]
         else:
