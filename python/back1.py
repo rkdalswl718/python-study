@@ -9,7 +9,7 @@ class Stack:
 
     def isFull(self):
         return self.top == self.capacity - 1
-
+ 
     def push(self, e):
         if not self.isFull():
             self.top += 1
