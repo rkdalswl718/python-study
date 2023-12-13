@@ -1,43 +1,39 @@
-class Student:
-    def __init__(self, name, grade, id):
-        self.name = name
-        self.grade = grade
-        self.id = id
-        self.messages = []
+class Stack:
+    def __init__(self, Stack_size = 5):
+        self.stack = [None] * Stack_size
+        self.top = -1
 
-    def send_message(self, message, recipient):
-        recipient.receive_message(message, self)
+    def isEmpty(self):
+        return self.top == -1
 
-    def receive_message(self, message, sender):
-        self.messages.append(f"{sender.name}: {message}")
+    def isFull(self):
+        return self.top == len(self.stack) - 1
 
-class School:
-    def __init__(self, name):
-        self.name = name
-        self.students = []
+    def push(self, e):
+        if not self.isFull():
+            self.top += 1
+            self.stack[self.top] = e
+        else:
+            print("다 차있음")
 
-    def add_student(self, student):
-        self.students.append(student)
+    def pop(self):
+        if self.isFull():
+            e = self.stack[self.top]
+            self.top -= 1
+            return e
+        else:
+            print("더이상지울게없노이기야")
 
-    def get_student_by_id(self, id):
-        for student in self.students:
-            if student.id == id:
-                return student
-        return None
+    def peek(self):
+        if not self.isEmpty():
+            print(self.stack[self.top])
 
-# 학생 생성
-student1 = Student("학생1", 1, 1001)
-student2 = Student("학생2", 2, 1002)
 
-# 학교 생성 및 학생 추가
-school = School("예방학교")
-school.add_student(student1)
-school.add_student(student2)
+stack = Stack()
 
-# 학생들 간에 메시지 전송
-student1.send_message("학교폭력은 우리 모두가 예방해야 합니다.", student2)
-student2.send_message("동의합니다. 함께 노력합시다.", student1)
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(434534)
 
-# 학생들의 메시지 확인
-for student in school.students:
-    print(f"{student.name}의 메시지: {student.messages}")
+stack.peek()
