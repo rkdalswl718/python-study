@@ -28,3 +28,9 @@ class Queue:
             print("큐가 비어 있습니다.")
         else:
             return self.queue[(self.front + 1) % self.size]
+
+queue = Queue()
+
+queue.enqueue(5)
+queue.enqueue(5)
+queue.enqueue(5)
