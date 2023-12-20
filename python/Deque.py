@@ -43,7 +43,7 @@ class Deque:
             print("덱이 비어있습니다.")
             return None
 
-    def getRear(self):
+    def getRear (self):
         # 맨 뒤의 원소를 반환 (꺼내지 않음)
         if not self.isEmpty():
             return self.deque[-1]

@@ -1,1 +1,3 @@
-print(bin(int(input())))[2:]
+class Deque:
+    def __init__(self):
+        self.d
